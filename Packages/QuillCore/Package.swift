@@ -15,6 +15,7 @@ let package = Package(
     products: [
         .library(name: "QuillDomain", targets: ["QuillDomain"]),
         .library(name: "QuillData", targets: ["QuillData"]),
+        .library(name: "QuillFeature", targets: ["QuillFeature"]),
     ],
     targets: [
         // Pure Swift. No Foundation-adjacent frameworks, no I/O, no UI.
