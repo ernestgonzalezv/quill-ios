@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		172250B2CA22BDE689DF3A2A /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCEC3D2849089B5433B502 /* AppDependencies.swift */; };
+		27365D59DEFB1592471F9D7E /* QuillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A53D35685118B4EBFF6C78 /* QuillApp.swift */; };
+		81FB625976D4900EBC11A091 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */; };
+		9AA64A0251A4F3BFABFB5016 /* QuillData in Frameworks */ = {isa = PBXBuildFile; productRef = D345C4F67F4AD956B77EC7D8 /* QuillData */; };
+		B0EA2C8C38D7EC013DF55067 /* QuillDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 9DE15344409232BF73DEBF68 /* QuillDomain */; };
+		BB72763EA818B422D63A58C9 /* CreateNoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */; };
+		C41957B31D9DC1943DC005AC /* QuillFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 0B86A4490410B9113D97877D /* QuillFeature */; };
+		E7C7A883171A58FE08DE27C1 /* SpotlightIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DBE22D21ADC2F0225DF0411 /* Quill.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Quill.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightIndexer.swift; sourceTree = "<group>"; };
+		5DCCEC3D2849089B5433B502 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		AA6ACF8B8FBDE11C6E63F9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteIntent.swift; sourceTree = "<group>"; };
+		E2A53D35685118B4EBFF6C78 /* QuillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillApp.swift; sourceTree = "<group>"; };
+		F02D4E3D6A0F0805FFF09671 /* QuillCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = QuillCore; path = Packages/QuillCore; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB3C5DE1C2E5C943BC23D630 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0EA2C8C38D7EC013DF55067 /* QuillDomain in Frameworks */,
+				9AA64A0251A4F3BFABFB5016 /* QuillData in Frameworks */,
+				C41957B31D9DC1943DC005AC /* QuillFeature in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		574FA7F4F56686AF305E9580 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DBE22D21ADC2F0225DF0411 /* Quill.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		577859B0867F82EBE76535CA = {
+			isa = PBXGroup;
+			children = (
+				F71CAFDFE12235C9CA44D892 /* App */,
+				A575C325117E7F87D3EAAD73 /* Packages */,
+				574FA7F4F56686AF305E9580 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		937CC0DE9191AB84AA7105EF /* Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */,
+				5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */,
+			);
+			path = Integrations;
+			sourceTree = "<group>";
+		};
+		A575C325117E7F87D3EAAD73 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				F02D4E3D6A0F0805FFF09671 /* QuillCore */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		B7DD0278D636D87BBFF65B3E /* Quill */ = {
+			isa = PBXGroup;
+			children = (
+				937CC0DE9191AB84AA7105EF /* Integrations */,
+				ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */,
+				5DCCEC3D2849089B5433B502 /* AppDependencies.swift */,
+				AA6ACF8B8FBDE11C6E63F9BE /* Info.plist */,
+				E2A53D35685118B4EBFF6C78 /* QuillApp.swift */,
+			);
+			path = Quill;
+			sourceTree = "<group>";
+		};
+		F71CAFDFE12235C9CA44D892 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B7DD0278D636D87BBFF65B3E /* Quill */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DEF7B1DAF0532C32746D151 /* Quill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 626C6C6011A78070956F318B /* Build configuration list for PBXNativeTarget "Quill" */;
+			buildPhases = (
+				7A1334224C98F7465D65136E /* Sources */,
+				FB3C5DE1C2E5C943BC23D630 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quill;
+			packageProductDependencies = (
+				9DE15344409232BF73DEBF68 /* QuillDomain */,
+				D345C4F67F4AD956B77EC7D8 /* QuillData */,
+				0B86A4490410B9113D97877D /* QuillFeature */,
+			);
+			productName = Quill;
+			productReference = 0DBE22D21ADC2F0225DF0411 /* Quill.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D419A2DB66B4CDAD3E67ECA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7DEF7B1DAF0532C32746D151 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 687645BADF2A1CD9BA5D6451 /* Build configuration list for PBXProject "Quill" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 577859B0867F82EBE76535CA;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				94EB1560B3C67B526DE39B07 /* XCLocalSwiftPackageReference "Packages/QuillCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 574FA7F4F56686AF305E9580 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DEF7B1DAF0532C32746D151 /* Quill */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1334224C98F7465D65136E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81FB625976D4900EBC11A091 /* AppConfiguration.swift in Sources */,
+				172250B2CA22BDE689DF3A2A /* AppDependencies.swift in Sources */,
+				BB72763EA818B422D63A58C9 /* CreateNoteIntent.swift in Sources */,
+				27365D59DEFB1592471F9D7E /* QuillApp.swift in Sources */,
+				E7C7A883171A58FE08DE27C1 /* SpotlightIndexer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0557A5149EC172623E0B7934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = App/Quill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernestgonzalezv.quill;
+				PRODUCT_NAME = Quill;
+				QUILL_API_BASE_URL = "https://api.quill.example.com/v1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76D9E6709DC61788E7520A2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = App/Quill/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ernestgonzalezv.quill;
+				PRODUCT_NAME = Quill;
+				QUILL_API_BASE_URL = "https://staging.api.quill.example.com/v1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8A763C425FD4792EF7303A2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A400322D05324A78FD2366A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		626C6C6011A78070956F318B /* Build configuration list for PBXNativeTarget "Quill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76D9E6709DC61788E7520A2A /* Debug */,
+				0557A5149EC172623E0B7934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		687645BADF2A1CD9BA5D6451 /* Build configuration list for PBXProject "Quill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A763C425FD4792EF7303A2B /* Debug */,
+				A400322D05324A78FD2366A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		94EB1560B3C67B526DE39B07 /* XCLocalSwiftPackageReference "Packages/QuillCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/QuillCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B86A4490410B9113D97877D /* QuillFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QuillFeature;
+		};
+		9DE15344409232BF73DEBF68 /* QuillDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QuillDomain;
+		};
+		D345C4F67F4AD956B77EC7D8 /* QuillData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QuillData;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1D419A2DB66B4CDAD3E67ECA /* Project object */;
+}
