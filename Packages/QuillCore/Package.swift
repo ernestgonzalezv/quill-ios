@@ -31,5 +31,9 @@ let package = Package(
             resources: [.process("Resources")],
             swiftSettings: strict
         ),
+
+        .testTarget(name: "QuillDomainTests", dependencies: ["QuillDomain"], swiftSettings: strict),
+        .testTarget(name: "QuillDataTests", dependencies: ["QuillData"], swiftSettings: strict),
+        .testTarget(name: "QuillFeatureTests", dependencies: ["QuillFeature"], swiftSettings: strict),
     ]
 )
