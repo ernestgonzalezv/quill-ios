@@ -14,10 +14,14 @@ let package = Package(
     platforms: [.iOS(.v18), .macOS(.v15)],
     products: [
         .library(name: "QuillDomain", targets: ["QuillDomain"]),
+        .library(name: "QuillData", targets: ["QuillData"]),
     ],
     targets: [
         // Pure Swift. No Foundation-adjacent frameworks, no I/O, no UI.
         .target(name: "QuillDomain", swiftSettings: strict),
+
+        // Adapters: SwiftData persistence, URLSession networking, sync engine.
+        .target(name: "QuillData", dependencies: ["QuillDomain"], swiftSettings: strict),
 
         // SwiftUI + view models. Depends on the domain only — never on QuillData.
         .target(
