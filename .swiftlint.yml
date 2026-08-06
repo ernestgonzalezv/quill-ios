@@ -1,0 +1,59 @@
+included:
+  - App
+  - Packages/QuillCore/Sources
+  - Packages/QuillCore/Tests
+
+excluded:
+  - Packages/QuillCore/.build
+  - build
+
+disabled_rules:
+  # The codebase deliberately carries long explanatory comments about *why* a
+  # decision was made; wrapping them at 120 would hurt readability.
+  - line_length
+  # Views and view models legitimately have many small members.
+  - type_body_length
+
+opt_in_rules:
+  - array_init
+  - closure_spacing
+  - collection_alignment
+  - contains_over_first_not_nil
+  - empty_count
+  - empty_string
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - last_where
+  - literal_expression_end_indentation
+  - modifier_order
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prefer_self_in_static_references
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+
+# Tests name what they assert, which makes for long function names.
+identifier_name:
+  max_length:
+    warning: 60
+
+function_body_length:
+  warning: 80
+  error: 140
+
+file_length:
+  warning: 500
+  error: 800
+
+nesting:
+  type_level: 2
+
+force_unwrapping:
+  severity: error
