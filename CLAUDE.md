@@ -160,6 +160,16 @@ make lint      # swiftlint --strict
 make build     # xcodebuild sobre simulador
 ```
 
+## Harness local (`.claude/`)
+- `.claude/hooks/format-swift.sh` — corre en cada `Write`/`Edit` de un `.swift` y reporta las violaciones de formato (140 caracteres, saltos alrededor de paréntesis). No auto-corrige: devuelve el aviso para que la siguiente edición ya salga bien
+- `.claude/agents/quill-architecture-explorer.md` — traza una feature por las capas (pantalla → view model → Logic → puerto → adaptador) sin editar nada
+- `.claude/agents/swift-formatting-reviewer.md` — revisa el formato contra las 7 reglas de arriba
+- `tasks/lessons.md` — lo aprendido de correcciones reales. Se lee al empezar y se escribe en el momento de la corrección
+
+## Available Skills
+- **localizable-sweep** — barrido de `Localizable.xcstrings`: completa los 4 idiomas, detecta keys huérfanas en ambos sentidos y reporta cobertura. Trigger: `/localizable-sweep` o "completa traducciones"
+- **accessibility-sweep** — barrido a11y sobre una vista: labels localizadas, acciones de swipe duplicadas en `.accessibilityActions`, Dynamic Type. Trigger: `/accessibility-sweep <archivo>` o "completa accesibilidad de X"
+
 ## Key Technologies
 - SwiftUI + Observation
 - SwiftData (persistencia local)
