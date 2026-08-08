@@ -1,160 +1,663 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "editor.body.placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start writing…" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Empieza a escribir…" } }
+  "sourceLanguage": "en",
+  "strings": {
+    "PHRASE_NEW_NOTE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva nota"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvo nòt"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova nota"
+          }
+        }
       }
     },
-    "editor.error.deletedElsewhere" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "This note was deleted on another device, so your changes were not saved." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Esta nota se eliminó en otro dispositivo, así que tus cambios no se guardaron." } }
+    "PHRASE_NEW_NOTE_TITLE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Note"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva nota"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouvo nòt"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nova nota"
+          }
+        }
       }
     },
-    "editor.done" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Listo" } }
-      }
-    },
-    "editor.new.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Note" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nueva nota" } }
-      }
-    },
-    "editor.title.placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Title" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Título" } }
-      }
-    },
-    "notes.count" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld note" } },
-              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld notes" } }
+    "PHRASE_NOTES_COUNT": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld note"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld notes"
+                }
+              }
             }
           }
         },
-        "es" : {
-          "variations" : {
-            "plural" : {
-              "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld nota" } },
-              "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld notas" } }
+        "es": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld nota"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld notas"
+                }
+              }
+            }
+          }
+        },
+        "ht": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld nòt"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld nòt"
+                }
+              }
+            }
+          }
+        },
+        "pt": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld nota"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld notas"
+                }
+              }
             }
           }
         }
       }
     },
-    "notes.delete" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Eliminar" } }
+    "PHRASE_NOTE_DELETED_ELSEWHERE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This note was deleted on another device, so your changes were not saved."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta nota se eliminó en otro dispositivo, así que tus cambios no se guardaron."
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nòt sa a te efase sou yon lòt aparèy, kidonk chanjman ou yo pa t konsève."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta nota foi excluída em outro dispositivo, portanto suas alterações não foram salvas."
+          }
+        }
       }
     },
-    "notes.empty.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap the compose button to write your first note. Everything is saved on this device and synced when you are online." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Toca el botón de redactar para escribir tu primera nota. Todo se guarda en este dispositivo y se sincroniza cuando tengas conexión." } }
+    "PHRASE_NO_NOTES_YET": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Notes Yet"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay notas"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poko gen nòt"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há notas"
+          }
+        }
       }
     },
-    "notes.empty.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Notes Yet" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Aún no hay notas" } }
+    "PHRASE_NO_RESULTS": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Results"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin resultados"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pa gen rezilta"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem resultados"
+          }
+        }
       }
     },
-    "notes.newNote" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Note" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nueva nota" } }
+    "PHRASE_SEARCH_NOTES": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search notes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar notas"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chèche nòt"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar notas"
+          }
+        }
       }
     },
-    "notes.noResults.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "No Results" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin resultados" } }
+    "PHRASE_START_WRITING": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start writing…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza a escribir…"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kòmanse ekri…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comece a escrever…"
+          }
+        }
       }
     },
-    "notes.pin" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pin" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fijar" } }
+    "PHRASE_STORE_UNAVAILABLE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quill could not open its database, so notes will not be saved after you close the app."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quill no pudo abrir su base de datos, así que las notas no se guardarán al cerrar la app."
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quill pa t kapab louvri baz done li, kidonk nòt yo p ap konsève lè w fèmen aplikasyon an."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Quill não conseguiu abrir seu banco de dados, então as notas não serão salvas ao fechar o app."
+          }
+        }
       }
     },
-    "notes.pinned.badge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Pinned" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fijada" } }
+    "PHRASE_TRY_AGAIN": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try Again"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reintentar"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eseye ankò"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tentar novamente"
+          }
+        }
       }
     },
-    "notes.retry" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Try Again" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reintentar" } }
+    "PHRASE_UP_TO_DATE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Up to date"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizado"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajou"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizado"
+          }
+        }
       }
     },
-    "notes.search.prompt" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Search notes" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Buscar notas" } }
+    "PHRASE_WRITE_FIRST_NOTE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the compose button to write your first note. Everything is saved on this device and synced when you are online."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el botón de redactar para escribir tu primera nota. Todo se guarda en este dispositivo y se sincroniza cuando tengas conexión."
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peze bouton ekri a pou w ekri premye nòt ou. Tout bagay konsève sou aparèy sa a epi sinkronize lè ou gen koneksyon."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque no botão de escrever para criar sua primeira nota. Tudo é salvo neste dispositivo e sincronizado quando você estiver online."
+          }
+        }
       }
     },
-    "notes.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Notes" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Notas" } }
+    "WORD_DELETE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Efase"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Excluir"
+          }
+        }
       }
     },
-    "notes.unpin" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Unpin" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "No fijar" } }
+    "WORD_DONE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fini"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluído"
+          }
+        }
       }
     },
-    "notes.untitled" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Untitled" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin título" } }
+    "WORD_NOTES": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nòt"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas"
+          }
+        }
       }
     },
-    "sync.syncing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Syncing…" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizando…" } }
+    "WORD_PIN": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pin"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fijar"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tache"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixar"
+          }
+        }
       }
     },
-    "sync.upToDate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Up to date" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Actualizado" } }
+    "WORD_PINNED": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pinned"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fijada"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tache"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixada"
+          }
+        }
+      }
+    },
+    "WORD_SYNCING": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Syncing…"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizando…"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ap sinkronize…"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizando…"
+          }
+        }
+      }
+    },
+    "WORD_TITLE": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Title"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Título"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tit"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Título"
+          }
+        }
+      }
+    },
+    "WORD_UNPIN": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unpin"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No fijar"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retire tach la"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafixar"
+          }
+        }
+      }
+    },
+    "WORD_UNTITLED": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untitled"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin título"
+          }
+        },
+        "ht": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "San tit"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem título"
+          }
+        }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

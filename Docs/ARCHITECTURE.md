@@ -40,7 +40,7 @@ to spin up, no `URLProtocol` to register globally, no simulator. The suite runs 
 a Linux-less macOS CI job in seconds, and nothing is flaky because nothing is
 shared.
 
-**The compiler enforces capability.** `NoteListViewModel`'s initialiser lists
+**The compiler enforces capability.** `ViewModelNoteList`'s initialiser lists
 exactly what it can do: load, create, delete, pin, sync. It has no repository
 reference, so it cannot invent a query or forge an `updatedAt`. Reading the
 initialiser tells you the screen's full blast radius.
@@ -65,13 +65,13 @@ Pure Swift. `import Foundation` and nothing else — no SwiftData, no SwiftUI, n
   through methods that stamp `updatedAt` (`edited(with:at:)`, `pinned(_:at:)`,
   `deleted(at:)`), so a timestamp can never silently drift out of date and break
   conflict resolution.
-- **Ports** — `NoteRepository`, `NoteRepositoryObserving`, `RemoteNoteStore`,
-  `SyncCursorStore`, `NoteSynchronizing`. Protocols the outer layers implement.
-- **Use cases** — `CreateNote`, `UpdateNote`, `DeleteNote`, `TogglePin`,
-  `LoadNotes`, `LoadNote`, `SyncNotes`. Small structs with one
+- **Ports** — `ProtoNoteRepository`, `ProtoNoteRepositoryObserving`, `ProtoRemoteNoteStore`,
+  `ProtoSyncCursorStore`, `ProtoNoteSynchronizing`. Protocols the outer layers implement.
+- **Use cases** — `LogicCreateNote`, `LogicUpdateNote`, `LogicDeleteNote`, `LogicTogglePin`,
+  `LogicLoadNotes`, `LogicLoadNote`, `LogicSyncNotes`. Small structs with one
   `callAsFunction`, so a call site reads `try await createNote(draft)` and each
   one is independently constructible in a test.
-- **Support** — `DateProvider` (injectable "now"), `NoteMerger` (conflict
+- **Support** — `ProtoDateProvider` (injectable "now"), `LogicNoteMerger` (conflict
   resolution), `NoteError`.
 
 Notable: **sorting, search matching and blank-note rules live here**, not in
@@ -82,23 +82,23 @@ offline and online, and as predicates they would be untestable without a store.
 
 The adapters.
 
-- `SwiftDataNoteRepository` — a `@ModelActor`. All store access is serialised by
+- `InteractorNotePersistence` — a `@ModelActor`. All store access is serialised by
   actor isolation. `NoteEntity` is `internal`: `@Model` objects are bound to their
   `ModelContext` and are not `Sendable`, so they are mapped to `Note` before
   crossing the module boundary. That makes the classic "passed a managed object to
   another thread" bug unrepresentable.
-- `ChangeBroadcaster` — fans store-change notifications out to multiple
+- `InteractorChangeBroadcaster` — fans store-change notifications out to multiple
   consumers, because `AsyncStream` is single-consumer and both the list and the
   Spotlight indexer need every tick. Uses `Mutex` rather than an actor so `send`
   stays synchronous and notifications cannot reorder relative to the writes that
   caused them.
-- `HTTPClient` / `URLSessionHTTPClient` / `RetryingHTTPClient` — retry is a
+- `ProtoInteractorHTTP` / `InteractorHTTPURLSession` / `InteractorHTTPRetrying` — retry is a
   **decorator**, not a flag, so it composes and can be tested against a stub that
   fails a scripted number of times. Backoff uses full jitter with an injected
   randomness closure.
 - `NoteDTO` — separate from `Note` on purpose. The wire format drifting from the
   domain model is the feature.
-- `SyncCoordinator` — coalesces concurrent sync triggers into one in-flight round.
+- `InteractorNoteSync` — coalesces concurrent sync triggers into one in-flight round.
 
 ### QuillFeature
 
@@ -124,7 +124,7 @@ every view to invent a precedence, and grows a new illegal combination with each
 flag. One value makes the view a total function of state, and adding a case
 breaks the view's `switch` at compile time.
 
-`NoteRouter` is how deep links get in. Spotlight and Siri arrive at the app layer,
+`InteractorNoteDeepLink` is how deep links get in. Spotlight and Siri arrive at the app layer,
 which has no access to the navigation path; they publish an intent to navigate and
 the view consumes it exactly once.
 
@@ -134,7 +134,7 @@ The composition root — the only place concrete types are named. No DI containe
 the graph is small enough that initialiser injection is clearer, checked at
 compile time, and cannot be misconfigured at runtime.
 
-`AppDependencies.shared` is the single global, and it exists for one reason: the
+`FactoryApp.shared` is the single global, and it exists for one reason: the
 system instantiates `AppIntent` values itself, so there is no initialiser to
 inject through. It is documented as such at the declaration.
 
@@ -145,11 +145,11 @@ Swift 6 language mode, `SWIFT_STRICT_CONCURRENCY: complete`, zero warnings.
 | Component | Isolation | Why |
 |---|---|---|
 | View models | `@MainActor` | UI state; compiler-proven no tearing |
-| `SwiftDataNoteRepository` | `@ModelActor` | Serialises store access without a lock |
-| `SyncCoordinator` | `actor` | Guards the in-flight task |
-| `SpotlightIndexer` | `@MainActor` | `CSSearchableItem` is non-`Sendable` |
+| `InteractorNotePersistence` | `@ModelActor` | Serialises store access without a lock |
+| `InteractorNoteSync` | `actor` | Guards the in-flight task |
+| `InteractorSpotlight` | `@MainActor` | `CSSearchableItem` is non-`Sendable` |
 | Use cases, DTOs, entities | `Sendable` values | Cross boundaries freely |
-| `ChangeBroadcaster` | `Mutex` | Synchronous `send` from isolated code |
+| `InteractorChangeBroadcaster` | `Mutex` | Synchronous `send` from isolated code |
 
 Two details that took thought:
 
@@ -172,7 +172,7 @@ completed. The view model is captured directly instead.
                  │         ▲                             │
                  │         └── tombstones REQUIRED       │
                  ▼                                       │
-         NoteMerger.merge(local:remote:)                 │
+         LogicNoteMerger.merge(local:remote:)                 │
                  │                                       │
         ┌────────┴────────┐                              │
         ▼                 ▼                              │
@@ -207,8 +207,8 @@ Ordering choices that matter:
 
 | Target | What it covers | Test doubles |
 |---|---|---|
-| `QuillDomainTests` | Merge rules, use-case behaviour, ordering, search | In-memory repository, frozen `DateProvider` |
-| `QuillDataTests` | Retry schedules, DTO round-trips, real SwiftData | Stub `HTTPClient`, fake `Sleeper`, in-memory `ModelContainer` |
+| `QuillDomainTests` | Merge rules, use-case behaviour, ordering, search | In-memory repository, frozen `ProtoDateProvider` |
+| `QuillDataTests` | Retry schedules, DTO round-trips, real SwiftData | Stub `ProtoInteractorHTTP`, fake `ProtoSleeper`, in-memory `ModelContainer` |
 | `QuillFeatureTests` | View-model state transitions, debounce, failure isolation | Fakes for every port |
 
 Time, randomness and sleeping are all injected, so no test sleeps and none flake.

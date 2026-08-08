@@ -8,11 +8,18 @@ excluded:
   - build
 
 disabled_rules:
-  # The codebase deliberately carries long explanatory comments about *why* a
-  # decision was made; wrapping them at 120 would hurt readability.
-  - line_length
   # Views and view models legitimately have many small members.
   - type_body_length
+
+# La regla de formato de Cococel: una expresión se queda en una línea si cabe en
+# 140 caracteres, y solo se parte cuando los pasa. Los comentarios quedan fuera
+# del conteo porque el repo lleva explicaciones largas del *porqué* de cada
+# decisión, y envolverlas a 140 las haría menos legibles.
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
 
 opt_in_rules:
   - array_init

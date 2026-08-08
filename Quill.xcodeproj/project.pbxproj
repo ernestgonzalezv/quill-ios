@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		172250B2CA22BDE689DF3A2A /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCEC3D2849089B5433B502 /* AppDependencies.swift */; };
-		27365D59DEFB1592471F9D7E /* QuillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A53D35685118B4EBFF6C78 /* QuillApp.swift */; };
-		81FB625976D4900EBC11A091 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */; };
+		0DFAB169E403CB97B55B2D8F /* CreateNoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C41AF82D0F53F6C167B87 /* CreateNoteIntent.swift */; };
+		22C74F9E65450D7ECC75FE1E /* ConstantsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895935366A732FA30DC528AC /* ConstantsAPI.swift */; };
+		293670B81115813925B46F5E /* InteractorSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7006B2D45EF1916EAB60E /* InteractorSpotlight.swift */; };
+		455F209268644531D09E5F4C /* QuillApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059CEF2111140792B474C524 /* QuillApp.swift */; };
+		8F8962B2055D307F66A82A7A /* FactoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAB4E10AA316F843FB3292A /* FactoryApp.swift */; };
 		9AA64A0251A4F3BFABFB5016 /* QuillData in Frameworks */ = {isa = PBXBuildFile; productRef = D345C4F67F4AD956B77EC7D8 /* QuillData */; };
 		B0EA2C8C38D7EC013DF55067 /* QuillDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 9DE15344409232BF73DEBF68 /* QuillDomain */; };
-		BB72763EA818B422D63A58C9 /* CreateNoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */; };
 		C41957B31D9DC1943DC005AC /* QuillFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 0B86A4490410B9113D97877D /* QuillFeature */; };
-		E7C7A883171A58FE08DE27C1 /* SpotlightIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		059CEF2111140792B474C524 /* QuillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillApp.swift; sourceTree = "<group>"; };
 		0DBE22D21ADC2F0225DF0411 /* Quill.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Quill.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightIndexer.swift; sourceTree = "<group>"; };
-		5DCCEC3D2849089B5433B502 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		560C41AF82D0F53F6C167B87 /* CreateNoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteIntent.swift; sourceTree = "<group>"; };
+		895935366A732FA30DC528AC /* ConstantsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAPI.swift; sourceTree = "<group>"; };
 		AA6ACF8B8FBDE11C6E63F9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteIntent.swift; sourceTree = "<group>"; };
-		E2A53D35685118B4EBFF6C78 /* QuillApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillApp.swift; sourceTree = "<group>"; };
+		AAE7006B2D45EF1916EAB60E /* InteractorSpotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorSpotlight.swift; sourceTree = "<group>"; };
+		DAAB4E10AA316F843FB3292A /* FactoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryApp.swift; sourceTree = "<group>"; };
 		F02D4E3D6A0F0805FFF09671 /* QuillCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = QuillCore; path = Packages/QuillCore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -42,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224C559D0B294B57AA4CB24E /* Spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				AAE7006B2D45EF1916EAB60E /* InteractorSpotlight.swift */,
+			);
+			path = Spotlight;
+			sourceTree = "<group>";
+		};
 		574FA7F4F56686AF305E9580 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,13 +67,21 @@
 			);
 			sourceTree = "<group>";
 		};
-		937CC0DE9191AB84AA7105EF /* Integrations */ = {
+		726A88730A4657C6E350CFCE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE2190A28DDCFC129F7485 /* CreateNoteIntent.swift */,
-				5973EA3605298F1C6A84AB7D /* SpotlightIndexer.swift */,
+				85A7F27D94443B78D0CA7DB6 /* Constants */,
+				059CEF2111140792B474C524 /* QuillApp.swift */,
 			);
-			path = Integrations;
+			path = App;
+			sourceTree = "<group>";
+		};
+		85A7F27D94443B78D0CA7DB6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				895935366A732FA30DC528AC /* ConstantsAPI.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		A575C325117E7F87D3EAAD73 /* Packages */ = {
@@ -79,13 +95,37 @@
 		B7DD0278D636D87BBFF65B3E /* Quill */ = {
 			isa = PBXGroup;
 			children = (
-				937CC0DE9191AB84AA7105EF /* Integrations */,
-				ADC922C2D856B186BE590AF9 /* AppConfiguration.swift */,
-				5DCCEC3D2849089B5433B502 /* AppDependencies.swift */,
+				726A88730A4657C6E350CFCE /* App */,
+				D1BF1F720BFDCC683E830743 /* Factorys */,
+				D3FD2501E0395BFD3E4CADED /* Interactors */,
 				AA6ACF8B8FBDE11C6E63F9BE /* Info.plist */,
-				E2A53D35685118B4EBFF6C78 /* QuillApp.swift */,
 			);
 			path = Quill;
+			sourceTree = "<group>";
+		};
+		C37101081819EAC59EC46745 /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				560C41AF82D0F53F6C167B87 /* CreateNoteIntent.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		D1BF1F720BFDCC683E830743 /* Factorys */ = {
+			isa = PBXGroup;
+			children = (
+				DAAB4E10AA316F843FB3292A /* FactoryApp.swift */,
+			);
+			path = Factorys;
+			sourceTree = "<group>";
+		};
+		D3FD2501E0395BFD3E4CADED /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				C37101081819EAC59EC46745 /* AppIntents */,
+				224C559D0B294B57AA4CB24E /* Spotlight */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		F71CAFDFE12235C9CA44D892 /* App */ = {
@@ -162,11 +202,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81FB625976D4900EBC11A091 /* AppConfiguration.swift in Sources */,
-				172250B2CA22BDE689DF3A2A /* AppDependencies.swift in Sources */,
-				BB72763EA818B422D63A58C9 /* CreateNoteIntent.swift in Sources */,
-				27365D59DEFB1592471F9D7E /* QuillApp.swift in Sources */,
-				E7C7A883171A58FE08DE27C1 /* SpotlightIndexer.swift in Sources */,
+				22C74F9E65450D7ECC75FE1E /* ConstantsAPI.swift in Sources */,
+				0DFAB169E403CB97B55B2D8F /* CreateNoteIntent.swift in Sources */,
+				8F8962B2055D307F66A82A7A /* FactoryApp.swift in Sources */,
+				293670B81115813925B46F5E /* InteractorSpotlight.swift in Sources */,
+				455F209268644531D09E5F4C /* QuillApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,27 @@ All notable changes are documented here. This project follows
 [Semantic Versioning](https://semver.org) and
 [Keep a Changelog](https://keepachangelog.com).
 
+## [Unreleased]
+
+### Changed
+
+- **Convenciones alineadas con Cococel.iOS.** Los tipos pasan a llevar prefijo por
+  responsabilidad — `Proto` para protocolos, `Interactor` para efectos de borde,
+  `Logic` para lógica de negocio, `Screen`/`View`/`ViewModel` para UI y `Factory`
+  para inyección de dependencias — y las carpetas al vocabulario
+  `Models/`, `ModelLogic/`, `Interactors/`, `UI/`, `ViewModel/`, `Factorys/`,
+  `Utilities/`. Los nombres de 1.0.0 (`NoteListViewModel`, `SwiftDataNoteRepository`,
+  `SyncCoordinator`…) ya no existen.
+- **Localización a cuatro idiomas** (en, es, ht, pt) con keys `WORD_`/`PHRASE_` y
+  un único punto de acceso, `Language.getLanguageString(key:comment:)`.
+- **Acciones de fila por delegate.** `ViewNoteRow` expone fijar y eliminar a
+  través de `DelegateUINoteRow` en vez de que la pantalla cablee closures.
+
+### Added
+
+- Workflows `ios-ci.yml` y `pr-main-ci.yml`, con filtrado de cambios de solo
+  documentación y verificación de que la configuración Release apunta a producción.
+
 ## [1.0.0] — 2026-08-06
 
 First release.
