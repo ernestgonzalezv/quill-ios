@@ -66,17 +66,21 @@ App/Quill/
   App/            -> Entry point (QuillApp) y Constants/ConstantsAPI
   Factorys/       -> Dependency injection (FactoryApp, la composition root)
   Interactors/    -> Efectos de borde del target app (Spotlight, AppIntents)
+  Utilities/      -> Extensiones Type+Feature (URLSession+Quill)
 Packages/QuillCore/Sources/
   QuillDomain/    -> Swift puro, sin I/O ni UI
     Models/Entities   -> Note, NoteDraft, NoteOrder
     Models/Protocol   -> los puertos: ProtoNoteRepository, ProtoRemoteNoteStore…
     Models/Error+Mapper -> NoteError
     ModelLogic/       -> lógica de negocio: LogicCreateNote, LogicSyncNotes…
+    Interactors/      -> InteractorSystemDate (leer el reloj ya es un efecto)
+    Utilities/        -> String+TrimmedOrNil
   QuillData/      -> Adaptadores
     Interactors/Networking   -> InteractorHTTPURLSession, InteractorNoteRemote
     Interactors/Persistence  -> InteractorNotePersistence (SwiftData)
     Interactors/Sync         -> InteractorNoteSync
-    Models/DTOs, Models/Entities
+    Models/DTOs, Models/Entities, Models/Error+Mapper
+    Utilities/        -> ISO8601, JSONDecoder+Quill, ModelContainer+Quill…
   QuillFeature/   -> SwiftUI + view models. Depende del dominio, NUNCA de QuillData
     UI/               -> ScreenNoteList, ScreenNoteEditor, ViewNoteRow
     ViewModel/        -> ViewModelNoteList, ViewModelNoteEditor
@@ -91,8 +95,8 @@ Packages/QuillCore/Tests/  -> LogicTests, ViewModelTests, InfraestructureTests, 
 ## Code Conventions
 - **Indentation:** 4 spaces
 - **Protocols:** `Proto` prefix (e.g. `ProtoNoteRepository`, `ProtoInteractorHTTP`)
-- **Extensions:** `Type+Feature.swift` pattern
-- **Files:** one main type per file, file name = type name
+- **Extensions:** `Type+Feature.swift` pattern (`URLSession+Quill.swift`, `Error+UserFacingMessage.swift`). Una extensión de un tipo ajeno NUNCA vive dentro del archivo de otro tipo
+- **Files:** one main type per file, file name = type name. Un tipo acompañante que solo existe como payload del principal (`SyncReport` junto a `LogicSyncNotes`, `MergeResult` junto a `LogicNoteMerger`) sí se queda en el mismo archivo
 - **Cabecera de archivo obligatoria** al estilo Xcode: `//`, `//  <Archivo>.swift`, `//  Quill`, `//`, `//  Created by Ernesto on <fecha>.`, `//`
 - **Naming:** `UpperCamelCase` para tipos, `lowerCamelCase` para métodos/propiedades
 - **Delegates for Views:** NUNCA closures (`var onAction: () -> Void = {}`) para acciones de una View. Siempre el patrón Delegate:

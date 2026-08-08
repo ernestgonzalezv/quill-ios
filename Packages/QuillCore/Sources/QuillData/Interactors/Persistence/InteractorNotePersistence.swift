@@ -104,16 +104,3 @@ public actor InteractorNotePersistence: ProtoNoteRepository, ProtoNoteRepository
         broadcaster.send()
     }
 }
-
-public extension ModelContainer {
-    /// The app's container.
-    ///
-    /// - Parameter inMemory: used by tests and previews. An in-memory container
-    ///   is created per test so suites can run in parallel without sharing a file.
-    static func quill(inMemory: Bool = false) throws -> ModelContainer {
-        try ModelContainer(
-            for: NoteEntity.self,
-            configurations: ModelConfiguration(isStoredInMemoryOnly: inMemory)
-        )
-    }
-}
