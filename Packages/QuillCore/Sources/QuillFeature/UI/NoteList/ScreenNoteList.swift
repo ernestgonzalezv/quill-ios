@@ -99,7 +99,7 @@ public struct ScreenNoteList: View {
     }
 
     @ViewBuilder
-    private func emptyView(for reason: ViewModelNoteList.EmptyReason) -> some View {
+    private func emptyView(for reason: TypeUINoteListEmpty) -> some View {
         switch reason {
         case .noNotes:
             ContentUnavailableView {
@@ -175,3 +175,13 @@ public struct ScreenNoteList: View {
         Language.getLanguageString(key: "PHRASE_NEW_NOTE", comment: "Botón de la barra que crea una nota")
     }
 }
+
+#if DEBUG
+#Preview("Lista") {
+    ScreenNoteList(factory: .preview(), router: InteractorNoteDeepLink())
+}
+
+#Preview("Lista vacía") {
+    ScreenNoteList(factory: .preview(notes: []), router: InteractorNoteDeepLink())
+}
+#endif

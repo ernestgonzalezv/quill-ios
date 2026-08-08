@@ -25,26 +25,8 @@ public import QuillDomain
 @MainActor
 @Observable
 public final class ViewModelNoteList {
-    public enum State: Equatable, Sendable {
-        case loading
-        case loaded([Note])
-        case empty(EmptyReason)
-        case failed(message: String)
-    }
-
-    public enum EmptyReason: Equatable, Sendable {
-        case noNotes
-        case noMatches(query: String)
-    }
-
-    public enum SyncStatus: Equatable, Sendable {
-        case idle
-        case syncing
-        case failed(message: String)
-    }
-
-    public private(set) var state: State = .loading
-    public private(set) var syncStatus: SyncStatus = .idle
+    public private(set) var state: TypeUINoteListState = .loading
+    public private(set) var syncStatus: TypeUINoteSyncStatus = .idle
 
     /// Bound directly by `.searchable`, so it must tolerate a mutation per
     /// keystroke. The debounce lives in `didSet` rather than in the view: a second
@@ -187,7 +169,7 @@ public final class ViewModelNoteList {
         }
     }
 
-    private func resolveState(for notes: [Note]) -> State {
+    private func resolveState(for notes: [Note]) -> TypeUINoteListState {
         guard notes.isEmpty else { return .loaded(notes) }
         // Distinguishing the two empties matters: "write your first note" is
         // actively wrong advice when the user has 200 notes and a typo'd query.
