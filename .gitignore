@@ -22,3 +22,6 @@ Package.resolved
 *.mobileprovision
 *.p12
 .env
+
+# Salida xunit de `swift test --xunit-output`
+TestResults-*.xml

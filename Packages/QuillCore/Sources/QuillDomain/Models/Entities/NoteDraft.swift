@@ -33,8 +33,8 @@ public struct NoteDraft: Hashable, Sendable {
 
     /// Normalises user input once, at the boundary, instead of trimming
     /// defensively at every read site.
-    public var normalized: NoteDraft {
-        NoteDraft(
+    public var normalized: Self {
+        Self(
             title: title.trimmingCharacters(in: .whitespacesAndNewlines),
             body: body.trimmingCharacters(in: .whitespacesAndNewlines),
             isPinned: isPinned

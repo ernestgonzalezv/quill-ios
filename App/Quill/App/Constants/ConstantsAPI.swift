@@ -16,8 +16,8 @@ import Foundation
 struct ConstantsAPI: Sendable {
     let apiBaseURL: URL
 
-    static func fromBundle(_ bundle: Bundle = .main) -> ConstantsAPI {
-        ConstantsAPI(apiBaseURL: Self.readAPIBaseURL(from: bundle))
+    static func fromBundle(_ bundle: Bundle = .main) -> Self {
+        Self(apiBaseURL: Self.readAPIBaseURL(from: bundle))
     }
 
     private static func readAPIBaseURL(from bundle: Bundle) -> URL {
