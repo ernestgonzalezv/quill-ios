@@ -14,8 +14,9 @@ public import QuillDomain
 /// `QuillData`) and no business deciding what the base URL is. The app's
 /// composition root fills in these closures, and previews and tests fill in
 /// fakes — with no service locator or global singleton in between.
-// `Sendable` no hace falta: al estar aislado al main actor, el compilador ya
-// garantiza que no cruza fronteras de aislamiento sin sincronizar.
+///
+/// No declara `Sendable`: al estar aislado al main actor, el compilador ya
+/// garantiza que no cruza fronteras de aislamiento sin sincronizar.
 @MainActor
 public struct FactoryNote {
     public var makeListViewModel: @MainActor () -> ViewModelNoteList

@@ -44,7 +44,6 @@ public struct Note: Identifiable, Hashable, Sendable {
         self.deletedAt = deletedAt
     }
 }
-
 public extension Note {
     var isDeleted: Bool { deletedAt != nil }
 
@@ -113,14 +112,5 @@ public extension Note {
         copy.deletedAt = date
         copy.updatedAt = date
         return copy
-    }
-}
-
-extension String {
-    /// `nil` instead of `""` for whitespace-only input, so callers can use
-    /// `if let` rather than repeating `.trimmingCharacters(in:).isEmpty`.
-    var trimmedOrNil: String? {
-        let trimmed = trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? nil : trimmed
     }
 }

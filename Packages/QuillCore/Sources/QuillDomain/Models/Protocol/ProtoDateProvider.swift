@@ -16,8 +16,3 @@ public import Foundation
 public protocol ProtoDateProvider: Sendable {
     var now: Date { get }
 }
-
-public struct InteractorSystemDate: ProtoDateProvider {
-    public init() {}
-    public var now: Date { Date() }
-}

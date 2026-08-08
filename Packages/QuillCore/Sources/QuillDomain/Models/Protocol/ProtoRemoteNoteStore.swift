@@ -24,7 +24,6 @@ public protocol ProtoRemoteNoteStore: Sendable {
     /// so any server-side normalisation is written back locally.
     func push(_ notes: [Note]) async throws -> [Note]
 }
-
 public struct RemoteChangeSet: Hashable, Sendable {
     public var notes: [Note]
     public var serverTime: Date
@@ -33,13 +32,4 @@ public struct RemoteChangeSet: Hashable, Sendable {
         self.notes = notes
         self.serverTime = serverTime
     }
-}
-
-/// Where the "last successful sync" watermark is kept.
-///
-/// Its own port because it has a different lifetime and failure mode from the
-/// note store: losing the cursor should degrade to a full resync, not to data loss.
-public protocol ProtoSyncCursorStore: Sendable {
-    func lastSyncedAt() async -> Date?
-    func setLastSyncedAt(_ date: Date?) async
 }
