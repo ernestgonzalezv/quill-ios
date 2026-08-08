@@ -101,6 +101,6 @@ public struct InteractorHTTPURLSession: ProtoInteractorHTTP {
         .cannotFindHost,
         .internationalRoamingOff,
         .callIsActive,
-        .dataNotAllowed,
+        .dataNotAllowed
     ]
 }

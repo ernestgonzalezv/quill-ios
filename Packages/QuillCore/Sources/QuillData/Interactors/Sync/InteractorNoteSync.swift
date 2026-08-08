@@ -26,8 +26,8 @@ public actor InteractorNoteSync: ProtoNoteSynchronizing {
     public private(set) var lastOutcome: Outcome?
 
     public enum Outcome: Sendable {
-        case succeeded(SyncReport, at: Date)
-        case failed(message: String, at: Date)
+        case succeeded(SyncReport, finishedAt: Date)
+        case failed(message: String, finishedAt: Date)
     }
 
     public init(syncNotes: LogicSyncNotes) {
@@ -52,14 +52,14 @@ public actor InteractorNoteSync: ProtoNoteSynchronizing {
         do {
             let report = try await task.value
             inFlight = nil
-            lastOutcome = .succeeded(report, at: Date())
+            lastOutcome = .succeeded(report, finishedAt: Date())
             return report
         } catch {
             inFlight = nil
             // Cancellation is not a sync failure and must not be surfaced as one
             // in the UI — the user backgrounded the app or navigated away.
             if !(error is CancellationError) {
-                lastOutcome = .failed(message: error.userFacingMessage, at: Date())
+                lastOutcome = .failed(message: error.userFacingMessage, finishedAt: Date())
             }
             throw error
         }

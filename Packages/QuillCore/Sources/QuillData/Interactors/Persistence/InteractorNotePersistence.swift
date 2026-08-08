@@ -22,9 +22,9 @@ public import QuillDomain
 public actor InteractorNotePersistence: ProtoNoteRepository, ProtoNoteRepositoryObserving {
     /// `nonisolated` so `changes` can be read without hopping onto the actor —
     /// subscribing is not a database operation and should not queue behind one.
-    private nonisolated let broadcaster = InteractorChangeBroadcaster()
+    nonisolated private let broadcaster = InteractorChangeBroadcaster()
 
-    public nonisolated var changes: AsyncStream<Void> { broadcaster.stream() }
+    nonisolated public var changes: AsyncStream<Void> { broadcaster.stream() }
 
     public func all(includingDeleted: Bool) throws -> [Note] {
         var descriptor = FetchDescriptor<NoteEntity>()

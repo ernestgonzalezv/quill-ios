@@ -113,7 +113,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: ios-test-results
-          path: TestResults.xml
+          path: TestResults-*.xml
           retention-days: 7
 
   lint:

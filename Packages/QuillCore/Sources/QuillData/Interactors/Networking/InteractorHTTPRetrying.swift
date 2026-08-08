@@ -30,7 +30,7 @@ public struct RetryPolicy: Hashable, Sendable {
         self.maxDelay = maxDelay
     }
 
-    public static let none = RetryPolicy(maxAttempts: 1)
+    public static let none = Self(maxAttempts: 1)
 
     /// Delay before `attempt` (1-based).
     ///

@@ -59,7 +59,7 @@ struct QuillShortcuts: AppShortcutsProvider {
             phrases: [
                 "Create a note in \(.applicationName)",
                 "New note in \(.applicationName)",
-                "Take a note with \(.applicationName)",
+                "Take a note with \(.applicationName)"
             ],
             shortTitle: "New Note",
             systemImageName: "square.and.pencil"

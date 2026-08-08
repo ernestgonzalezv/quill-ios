@@ -52,8 +52,13 @@ final class FactoryApp {
         } catch {
             let comment = "Aviso de que la base de datos local no abrió y las notas no se guardarán"
             let message = Language.getLanguageString(key: "PHRASE_STORE_UNAVAILABLE", comment: comment)
+            // Si ni el contenedor en memoria se puede crear, no queda app que
+            // degradar: es un fallo de configuración del esquema, no del disco.
+            guard let container = try? ModelContainer.quill(inMemory: true) else {
+                preconditionFailure("No se pudo crear el ModelContainer en memoria")
+            }
             return FactoryApp(
-                container: try! .quill(inMemory: true),
+                container: container,
                 configuration: configuration,
                 storeFailureMessage: message
             )

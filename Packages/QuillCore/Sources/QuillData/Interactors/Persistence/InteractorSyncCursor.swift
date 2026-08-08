@@ -18,7 +18,7 @@ public struct InteractorSyncCursor: ProtoSyncCursorStore {
     /// `UserDefaults` is documented as thread-safe but is not marked `Sendable`,
     /// so the exemption is stated explicitly here rather than by making the whole
     /// type an actor for a two-field read.
-    private nonisolated(unsafe) let defaults: UserDefaults
+    nonisolated(unsafe) private let defaults: UserDefaults
     private let key: String
 
     public init(defaults: UserDefaults = .standard, key: String = "sync.notes.lastSyncedAt") {

@@ -43,7 +43,7 @@ struct RetryingHTTPClientTests {
     func retriesThenSucceeds() async throws {
         let client = ScriptedHTTPClient([
             .failure(.transport(message: "flaky", isRetryable: true)),
-            .success(HTTPResponse(statusCode: 200, body: Data("ok".utf8))),
+            .success(HTTPResponse(statusCode: 200, body: Data("ok".utf8)))
         ])
         let sleeper = RecordingSleeper()
         let sut = InteractorHTTPRetrying(
@@ -230,7 +230,7 @@ struct SwiftDataNoteRepositoryTests {
         try await sut.upsert([
             stub(title: "Old", deletedAt: 50),
             stub(title: "Recent", deletedAt: 500),
-            stub(title: "Live"),
+            stub(title: "Live")
         ])
 
         try await sut.purgeTombstones(deletedBefore: Date(timeIntervalSince1970: 100))
