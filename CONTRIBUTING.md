@@ -53,10 +53,14 @@ branch reintroduces the conflict.
 
 ## Commits
 
-[Conventional Commits](https://www.conventionalcommits.org/):
-`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`, `ci:`.
+En español, con guion delante y el verbo en participio: `- Added ...`,
+`- Updated ...`, `- Fixed ...`, `- Moved ...`, `- Removed ...`.
 
-Scope by module where it helps — `feat(domain):`, `fix(data):`.
+El resumen dice **qué** cambió; el cuerpo, **por qué**. Un commit que solo
+repita el diff no aporta nada que `git show` no diga ya.
+
+Hasta la 1.0.0 el repo usó Conventional Commits; la historia se conserva tal
+cual y la convención nueva aplica de ahí en adelante.
 
 ## Before opening a PR
 

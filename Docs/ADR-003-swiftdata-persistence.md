@@ -28,7 +28,7 @@ locks the data to Apple accounts.
 
 ## Decision
 
-SwiftData, reached only through the `NoteRepository` port.
+SwiftData, reached only through the `ProtoNoteRepository` port.
 
 Two rules make the choice reversible:
 

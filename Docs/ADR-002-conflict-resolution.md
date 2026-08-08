@@ -37,7 +37,7 @@ single-user notes app where concurrent edits to one note are rare.
 ## Decision
 
 **Last-write-wins on `updatedAt`, with deletes winning ties.** Implemented as
-`NoteMerger` — a pure function with no I/O, no clock and no store.
+`LogicNoteMerger` — a pure function with no I/O, no clock and no store.
 
 Deletes are **soft**: a note with a non-nil `deletedAt` is a tombstone that stays
 in the store and syncs like any other change. Its content is cleared on deletion,
@@ -57,7 +57,7 @@ Supporting requirements:
 
 - Every mutation goes through a method that stamps `updatedAt`
   (`Note.edited(with:at:)` and friends), so a timestamp cannot silently drift.
-- All timestamps come from an injected `DateProvider`, which is what makes the
+- All timestamps come from an injected `ProtoDateProvider`, which is what makes the
   rules testable without sleeping.
 - Wire format sends **fractional seconds**. Whole-second precision makes
   near-simultaneous edits tie constantly and fall through to rule 3.
@@ -70,7 +70,7 @@ Supporting requirements:
 **Good**
 
 - Converges, provably, and the proof is a unit test rather than an argument.
-- `NoteMerger` is the first and only place to look when a sync bug appears.
+- `LogicNoteMerger` is the first and only place to look when a sync bug appears.
 - Deletes propagate correctly instead of resurrecting.
 
 **Bad, and accepted**

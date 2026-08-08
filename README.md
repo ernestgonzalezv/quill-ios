@@ -43,7 +43,7 @@ The one rule that shapes everything: **dependencies point inward, and
 That is not decoration. It is enforced by the module boundary — the feature target
 does not list `QuillData` as a dependency, so a view model *cannot* reach
 `URLSession` or a `ModelContext` even by accident. The presentation layer talks to
-`NoteRepository`, `NoteSynchronizing` and a handful of use cases, all of which are
+`ProtoNoteRepository`, `ProtoNoteSynchronizing` and a handful of use cases, all of which are
 protocols or value types declared in the domain.
 
 What that buys, concretely:
@@ -60,28 +60,28 @@ their trade-offs: **[Docs/](Docs/)** (ADR 001–004).
 
 ## The parts worth reading first
 
-**`NoteMerger`** — [`QuillDomain/Support/NoteMerger.swift`](Packages/QuillCore/Sources/QuillDomain/Support/NoteMerger.swift)
+**`LogicNoteMerger`** — [`QuillDomain/ModelLogic/Merge/LogicNoteMerger.swift`](Packages/QuillCore/Sources/QuillDomain/ModelLogic/Merge/LogicNoteMerger.swift)
 Conflict resolution as a pure function: last-write-wins on `updatedAt`, with
 tombstones winning ties. No I/O, no clock, no store, so every conflict case is a
 one-line test. [ADR-002](Docs/ADR-002-conflict-resolution.md) covers why LWW and
 what it costs.
 
-**`SyncNotes`** — [`QuillDomain/UseCases/SyncNotes.swift`](Packages/QuillCore/Sources/QuillDomain/UseCases/SyncNotes.swift)
+**`LogicSyncNotes`** — [`QuillDomain/ModelLogic/Sync/LogicSyncNotes.swift`](Packages/QuillCore/Sources/QuillDomain/ModelLogic/Sync/LogicSyncNotes.swift)
 Pull → reconcile → write locally → push → advance cursor. Every step is
 idempotent and the cursor only advances on success, so an interrupted round is
 safe to replay. The cursor tracks **server** time, never device time.
 
-**`SwiftDataNoteRepository`** — [`QuillData/Persistence/`](Packages/QuillCore/Sources/QuillData/Persistence/SwiftDataNoteRepository.swift)
+**`InteractorNotePersistence`** — [`QuillData/Interactors/Persistence/`](Packages/QuillCore/Sources/QuillData/Interactors/Persistence/InteractorNotePersistence.swift)
 A `@ModelActor`, so all store access is serialised by actor isolation rather than
 by a lock. `@Model` objects never leave the module: they are mapped to value-type
 `Note` at the boundary, which makes it impossible to hand a context-bound object
 to another actor.
 
-**`SyncCoordinator`** — [`QuillData/Sync/`](Packages/QuillCore/Sources/QuillData/Sync/SyncCoordinator.swift)
+**`InteractorNoteSync`** — [`QuillData/Interactors/Sync/`](Packages/QuillCore/Sources/QuillData/Interactors/Sync/InteractorNoteSync.swift)
 Coalesces overlapping sync triggers into one in-flight round, so "sync on
 foreground, on pull-to-refresh, and after every write" is safe to actually write.
 
-**`NoteListViewModel`** — [`QuillFeature/NoteList/`](Packages/QuillCore/Sources/QuillFeature/NoteList/NoteListViewModel.swift)
+**`ViewModelNoteList`** — [`QuillFeature/ViewModel/NoteList/`](Packages/QuillCore/Sources/QuillFeature/ViewModel/NoteList/ViewModelNoteList.swift)
 One `State` enum instead of `isLoading` + `notes` + `error`, so illegal
 combinations are unrepresentable and the view is a total function of state.
 Search is debounced in the view model, not the view.
@@ -158,7 +158,7 @@ on macOS without a simulator, and are organised by the layer they cover:
 - **`QuillFeatureTests`** — view-model state machines: every transition, debounce
   behaviour, and the rule that a sync failure must never blank a loaded list.
 
-Time and randomness are injected everywhere (`DateProvider`, `Sleeper`, the
+Time and randomness are injected everywhere (`ProtoDateProvider`, `ProtoSleeper`, the
 jitter closure), so there are no sleeps and no flakes.
 
 ---
