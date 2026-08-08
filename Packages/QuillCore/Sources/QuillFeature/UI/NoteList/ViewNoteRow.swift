@@ -107,3 +107,22 @@ struct ViewNoteRow: View {
         return parts.joined(separator: ". ")
     }
 }
+
+#if DEBUG
+// El delegate va en `nil`: la fila se dibuja sin montar el view model, que es
+// exactamente para lo que se declaró Optional.
+#Preview("Fila") {
+    List {
+        ForEach(Note.previewSamples) { note in
+            ViewNoteRow(note: note, delegate: nil)
+        }
+    }
+}
+
+#Preview("Fila · texto grande") {
+    List {
+        ViewNoteRow(note: .preview, delegate: nil)
+    }
+    .environment(\.dynamicTypeSize, .accessibility3)
+}
+#endif

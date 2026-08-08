@@ -132,3 +132,11 @@ private extension View {
         #endif
     }
 }
+
+#if DEBUG
+#Preview("Editor") {
+    NavigationStack {
+        ScreenNoteEditor(viewModel: FactoryNote.preview().makeEditorViewModel(.preview))
+    }
+}
+#endif
