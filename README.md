@@ -58,6 +58,33 @@ their trade-offs: **[Docs/](Docs/)** (ADR 001–004).
 
 ---
 
+## Naming: the prefix tells you the layer
+
+Every type is prefixed by what it is responsible for, so a file name alone places
+it in the architecture without opening it. The same convention runs across the
+production codebase this mirrors.
+
+| Prefix | Means | Example |
+|---|---|---|
+| `Proto` | A protocol — a port, or the seam a fake plugs into | `ProtoNoteRepository` |
+| `Logic` | Business logic. Pure, injected with ports only | `LogicSyncNotes` |
+| `Interactor` | A side effect: disk, network, system frameworks | `InteractorNotePersistence` |
+| `Screen` | A full screen | `ScreenNoteList` |
+| `View` | A component inside a screen | `ViewNoteRow` |
+| `ViewModel` | Presentation state and actions | `ViewModelNoteList` |
+| `TypeUI` | An enum the UI switches over | `TypeUINoteListState` |
+| `DelegateUI` | How a view talks back — never a closure | `DelegateUINoteRow` |
+| `Factory` | Dependency injection | `FactoryNote`, `FactoryApp` |
+| `Mock` | A double, tests and previews only | `MockNotePersistence` |
+
+Folders follow the same vocabulary — `Models/`, `ModelLogic/`, `Interactors/`,
+`UI/`, `ViewModel/`, `Factorys/`, `Utilities/` — and extensions of a foreign type
+live in their own `Type+Feature.swift`. The full set of rules, including the
+140-character formatting rule and the four-language localisation contract, is in
+**[CLAUDE.md](CLAUDE.md)** and **[AGENTS.md](AGENTS.md)**.
+
+---
+
 ## The parts worth reading first
 
 **`LogicNoteMerger`** — [`QuillDomain/ModelLogic/Merge/LogicNoteMerger.swift`](Packages/QuillCore/Sources/QuillDomain/ModelLogic/Merge/LogicNoteMerger.swift)
